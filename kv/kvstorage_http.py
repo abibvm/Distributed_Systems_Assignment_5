@@ -13,13 +13,15 @@ _g_kvstorage: KVStorage | None = None
 def is_str(value):
     b = True
     #TODO: update b so that it is a boolean that indicates whether value is a string.
-    return b
+    return type(value) == str
 
 
 def is_list_of_string(value):
     b = True
     # TODO: update b so that it is a boolean that indicates whether value is a list of strings.
-    return b
+    if isinstance(value, list):
+        return all(isinstance(item, str) for item in value)
+    return False 
 
 
 def create_app(kv: KVStorage) -> Flask:
@@ -50,7 +52,7 @@ def create_app(kv: KVStorage) -> Flask:
             payload = request.get_json(force=False, silent=False)
         except Exception:
             abort(400)
-
+ 
         if not isinstance(payload, dict):
             abort(400)
 

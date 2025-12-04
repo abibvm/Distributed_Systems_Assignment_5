@@ -2,11 +2,12 @@ Assignment 5 Report
 ---------------------
 
 # Team Members
-
+Annabel Morgenstern
+Torsten Schmälzle
 
 # GitHub link to your (forked) repository
 
-...
+https://github.com/abibvm/Distributed_Systems_Assignment_5.git
 
 # Task 1
 
